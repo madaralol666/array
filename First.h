@@ -35,6 +35,7 @@ public:
 	friend First operator-(const First&, const First&);
 	friend First operator*(const First&, const First&);
 	friend First operator==(const First&, const First&);
+	unsigned char* magicArray(const First&, const First&);
 
 
 	~First() 

@@ -35,3 +35,20 @@ First operator+(const First& a , const First& b)
     }
     return result;
 }
+
+unsigned char* First::magicArray(const First& a, const First& b)
+{
+    int bigger_drob_size = (a.size_drob > b.size_drob ? a.size_drob : b.size_drob);
+    unsigned char* small_array = (a.size_drob > b.size_drob ? a.drob_part : b.whole_part);
+    int difference = (a.size_drob > b.size_drob ? a.size_drob - b.size_drob : b.size_drob - a.size_drob);
+    unsigned char* new_array = new unsigned char[bigger_drob_size];
+    for (int i = 0; i <sizeof(small_array); i++)
+    {
+        new_array[i] = small_array[i];
+    }
+    for (int i = sizeof(small_array); i < bigger_drob_size; i++)
+    {
+        new_array[i] = '0';
+    }
+    return nullptr;
+}
